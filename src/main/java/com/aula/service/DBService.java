@@ -29,11 +29,5 @@ public class DBService {
 		
 		usuRepository.saveAll(Arrays.asList(usu1,usu2));
 	}
-	
-	@Bean
-	public boolean Database() throws ParseException {
-		instantiateDatabase();
-		return true;
-	}
 
 }
