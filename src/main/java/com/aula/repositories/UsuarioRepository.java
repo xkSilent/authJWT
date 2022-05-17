@@ -8,4 +8,6 @@ import com.aula.domain.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
+	Usuario findByEmail(String email);
+
 }
