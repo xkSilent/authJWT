@@ -7,12 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/usuarios")
 public class UsuarioController {
 	
-	@GetMapping
+	@PreAuthorize("hasAnyRole('ADMIN')")
+	@GetMapping("/usuarios")
 	public String teste() {
-		return "Autorizado a acessar esta pagina";
+		return "Permissão de ADMIN";
+	}
+	
+	@GetMapping("/usuario")
+	public String teste2() {
+		return "Permissão de usuario";
 	}
 
 }
